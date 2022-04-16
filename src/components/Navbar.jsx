@@ -46,7 +46,7 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ mode }) => {
   const [toggle, setToggle] = useState(false);
   const open = Boolean(toggle);
   const handleClick = (event) => {
@@ -63,11 +63,15 @@ const Navbar = () => {
           Logo goes here
         </Typography> */}
         <Box>
-          <img
-            src={images.logo4}
-            alt="logo"
-            style={{ width: '60px', height: '55px' }}
-          />
+          {mode === 'light' ? (
+            <img
+              src={images.logo4}
+              alt="logo"
+              style={{ width: '60px', height: '55px' }}
+            />
+          ) : (
+            'Nexus Dev'
+          )}
         </Box>
         <Search>
           <InputBase placeholder="search..." />
